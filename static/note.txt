@@ -1,0 +1,11 @@
+下载stylus
+npm install stylus stylus-loader --save-dev
+
+下载vue-router
+npm install vue-router --save
+
+下载swiper
+npm install --save swiper
+
+下载axios
+npm install --save axios
