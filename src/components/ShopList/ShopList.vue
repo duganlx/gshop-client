@@ -1,6 +1,6 @@
 <template>
   <div class="shop_container">
-    <ul class="shop_list">
+    <ul class="shop_list" v-if="shops.length">
       <li class="shop_li border-1px" v-for="(shop,index) in shops" :key="index">
         <a>
           <div class="shop_left">
@@ -10,33 +10,34 @@
             <section class="shop_detail_header">
               <h4 class="shop_title ellipsis">{{shop.name}}</h4>
               <ul class="shop_detail_ul">
+                <!-- 保准票 -->
                 <li class="supports" v-for="(support,index) in shop.supports" :key="index">{{support.icon_name}}</li>
               </ul>
             </section>
             <section class="shop_rating_order">
               <section class="shop_rating_order_left">
-                <div class="star star-24">
-                  <span class="star-item on"></span>
-                  <span class="star-item on"></span>
-                  <span class="star-item on"></span>
-                  <span class="star-item half"></span>
-                  <span class="star-item off"></span>
-                </div>
+                <!-- 评分星星显示 -->
+                <Star :score="shop.rating" :size="24" />
+                <!-- 评分 -->
                 <div class="rating_section">
-                  3.6
+                  {{shop.rating}}
                 </div>
+                <!-- 每月订单数 -->
                 <div class="order_section">
-                  月售106单
+                  月售{{shop.recent_order_num}}单
                 </div>
               </section>
               <section class="shop_rating_order_right">
-                <span class="delivery_style delivery_right">硅谷专送</span>
+                <!-- 配送模式 -->
+                <span class="delivery_style delivery_right">{{shop.delivery_mode.text}}</span>
               </section>
             </section>
             <section class="shop_distance">
               <p class="shop_delivery_msg">
+                <!-- 起送价格 -->
                 <span>¥{{shop.float_minimum_order_amount}}起送</span>
                 <span class="segmentation">/</span>
+                <!-- 配送费 -->
                 <span>配送费约¥{{shop.float_delivery_fee}}</span>
               </p>
             </section>
@@ -44,21 +45,30 @@
         </a>
       </li>
     </ul>
+    <ul v-else>
+      <li v-for="item in 6">
+        <img src="./images/shop_back.svg" alt="back">
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-  // import {mapState} from 'vuex'
+  import {mapState} from 'vuex'
+  import Star from '../Star/Star.vue'
 
   export default {
-    // data () {
-    //   return {
-    //     baseImgUrl: ''
-    //   }
-    // },
-    // computed: {
-    //   ...mapState(['shops'])
-    // }
+    data () {
+      return {
+        baseImgUrl: 'http://localhost:4000'
+      }
+    },
+    computed: {
+      ...mapState(['shops'])
+    },
+    components:{
+      Star
+    }
   }
 </script>
 
@@ -139,71 +149,6 @@
               .shop_rating_order_left
                 float left
                 color #ff9a0d
-
-                .star //2x图 3x图
-                  float left
-                  font-size 0
-
-                  .star-item
-                    display inline-block
-                    background-repeat no-repeat
-
-                  &.star-48
-                    .star-item
-                      width 20px
-                      height 20px
-                      margin-right 22px
-                      background-size 20px 20px
-
-                      &:last-child
-                        margin-right: 0
-
-                      &.on
-                        bg-image('./images/stars/star48_on')
-
-                      &.half
-                        bg-image('./images/stars/star48_half')
-
-                      &.off
-                        bg-image('./images/stars/star48_off')
-
-                  &.star-36
-                    .star-item
-                      width 15px
-                      height 15px
-                      margin-right 6px
-                      background-size 15px 15px
-
-                      &:last-child
-                        margin-right 0
-
-                      &.on
-                        bg-image('./images/stars/star36_on')
-
-                      &.half
-                        bg-image('./images/stars/star36_half')
-
-                      &.off
-                        bg-image('./images/stars/star36_off')
-
-                  &.star-24
-                    .star-item
-                      width 10px
-                      height 10px
-                      margin-right 3px
-                      background-size 10px 10px
-
-                      &:last-child
-                        margin-right 0
-
-                      &.on
-                        bg-image('./images/stars/star24_on')
-
-                      &.half
-                        bg-image('./images/stars/star24_half')
-
-                      &.off
-                        bg-image('./images/stars/star24_off')
 
                 .rating_section
                   float left

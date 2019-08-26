@@ -9,3 +9,6 @@ npm install --save swiper
 
 下载axios
 npm install --save axios
+
+下载vuex
+npm install --save vuex

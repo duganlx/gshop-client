@@ -1,16 +1,19 @@
 <template>
   <header class="header">
-    <slot name="left"></slot> <!--插槽占位-->
+    <!-- 左边插槽占位（搜索按钮） -->
+    <slot name="left"></slot>
+    <!-- 中间标题（显示当前地理位置） -->
     <span class="header_title">
       <span class="header_title_text ellipsis">{{title}}</span>
 	  </span>
-    <slot name="right"></slot><!--插槽占位-->
+    <!-- 右边插槽占位（登录|注册）-->
+    <slot name="right"></slot>
   </header>
 </template>
 
 <script>
   export default {
-    props: {
+    props: { // 声明接收传过来的数据
       title: String
     }
   }
