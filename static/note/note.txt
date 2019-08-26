@@ -12,3 +12,11 @@ npm install --save axios
 
 下载vuex
 npm install --save vuex
+
+下载mint-ui
+npm install --save mint-ui
+实现按需打包
+npm install --save-dev babel-plugin-component
+
+下载mock.js
+npm install --save mockjs

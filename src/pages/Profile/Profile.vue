@@ -3,21 +3,21 @@
     <HeaderTop title="我的"/>
     <section class="profile-number">
       <!-- 跳转到登录页面 -->
-      <router-link class="profile-link" to="/login">
+      <router-link class="profile-link" :to="userInfo._id ? '/userinfo' : '/login'">
         <div class="profile_image">
           <i class="iconfont icon-person"></i>
         </div>
         <div class="user-info">
-          <p class="user-info-top">登录/注册</p>
+          <p class="user-info-top" v-if="!userInfo.phone">{{userInfo.name || '登录/注册'}}</p>
           <p>
                 <span class="user-icon">
-                  <i class="iconfont icon-shouji icon-mobile"></i>
+                  <i class="iconfont icon-shouji1 icon-mobile"></i>
                 </span>
-            <span class="icon-mobile-number">暂无绑定手机号</span>
+            <span class="icon-mobile-number">{{userInfo.phone || '暂无绑定手机号'}}</span>
           </p>
         </div>
         <span class="arrow">
-          <i class="iconfont icon-jiantou1"></i>
+          <i class="iconfont icon-xiangyoujiantou"></i>
         </span>
       </router-link>
     </section>
@@ -41,12 +41,12 @@
       <!-- 我的订单 -->
       <a href='javascript:' class="my_order">
             <span>
-              <i class="iconfont icon-order-s"></i>
+              <i class="iconfont icon-wodedingdan"></i>
             </span>
         <div class="my_order_div">
           <span>我的订单</span>
           <span class="my_order_icon">
-                <i class="iconfont icon-jiantou1"></i>
+                <i class="iconfont icon-xiangyoujiantou"></i>
               </span>
         </div>
       </a>
@@ -58,7 +58,7 @@
         <div class="my_order_div">
           <span>积分商城</span>
           <span class="my_order_icon">
-                <i class="iconfont icon-jiantou1"></i>
+                <i class="iconfont icon-xiangyoujiantou"></i>
               </span>
         </div>
       </a>
@@ -70,7 +70,7 @@
         <div class="my_order_div">
           <span>硅谷外卖会员卡</span>
           <span class="my_order_icon">
-                <i class="iconfont icon-jiantou1"></i>
+                <i class="iconfont icon-xiangyoujiantou"></i>
               </span>
         </div>
       </a>
@@ -84,18 +84,43 @@
         <div class="my_order_div">
           <span>服务中心</span>
           <span class="my_order_icon">
-                <i class="iconfont icon-jiantou1"></i>
+                <i class="iconfont icon-xiangyoujiantou"></i>
               </span>
         </div>
       </a>
+    </section>
+
+    <section class="profile_my_order border-1px">
+      <mt-button type="danger" style="width: 100%" v-if="userInfo._id" @click="logout">退出登陆</mt-button>
     </section>
   </section>
 </template>
 
 <script>
+  import {mapState} from 'vuex'
+  import {MessageBox, Toast} from 'mint-ui'
   import HeaderTop from '../../components/HeaderTop/HeaderTop.vue'
 
   export default {
+    computed: {
+      ...mapState(['userInfo'])
+    },
+
+    methods:{
+      logout(){
+        MessageBox.confirm('确认退出吗？').then(
+          action => {
+            //请求退出
+            this.$store.dispatch('logout')
+            Toast('登出完成')
+          },
+          action => {
+            console.log('点击了取消')
+          }
+        );
+      }
+    },
+
     components: {
       HeaderTop
     }

@@ -20,7 +20,7 @@
     </a>
     <a href="javascript:;" class="guide_item" :class="{on: '/profile'===$route.path}" @click="goTo('/profile')">
       <span class="item_icon">
-        <i class="iconfont icon-ren"></i>
+        <i class="iconfont icon-person"></i>
       </span>
       <span>我的</span>
     </a>
