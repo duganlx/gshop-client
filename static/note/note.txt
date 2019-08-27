@@ -20,3 +20,9 @@ npm install --save-dev babel-plugin-component
 
 下载mock.js
 npm install --save mockjs
+
+下载better-scroll
+npm install --save better-scroll
+
+下载vue-lazyload
+npm install --save vue-lazyload

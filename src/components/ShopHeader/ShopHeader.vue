@@ -3,7 +3,7 @@
     <nav class="shop-nav" :style="{backgroundImage: `url(${info.bgImg})`}">
       <!-- 返回 -->
       <a class="back" @click="$router.back()">
-        <i class="iconfont icon-xiangzuojiantou"></i>
+        <i class="iconfont icon-xiangzuojiantou icon-arrow_left"></i>
       </a>
     </nav>
     <div class="shop-content" @click="toggleShopShow">

@@ -6,11 +6,13 @@ import {Button} from 'mint-ui'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import VueLazyLoad from 'vue-lazyload'
 
 import './mock/mockServer' // 加载mockService即可
 
 // 注册全局组件标签
 Vue.component(Button.name, Button) // <mt-button>
+Vue.use(VueLazyLoad) //懒加载图片
 
 new Vue({
   el: '#app',

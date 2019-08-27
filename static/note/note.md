@@ -135,4 +135,39 @@ mapState(['xxx'])读取state中数据到组件中，然后在模板中显示xxx�
 -- 解决：初始值为{}  
 - vue transition 动画  
 
+# day04  
+## 1. ShopGoods组件  
+- 动态展现列表数据  
+- 基本滑动  
+-- 使用better-scroll  
+-- 理解其基本原理  
+-- 创建BScroll对象的时机  
+-- - watch + $nextTick()  
+-- - callback + $nextTick()  
+- 滑动右侧列表，左侧同步更新  
+-- better-scroll禁用了原生的dom事件，使用的是自定义事件  
+-- 绑定监听：scroll/scrollEnd  
+-- 滚动监听的类型：probeType  
+-- 列表滑动的3种类型  
+-- - 手指触摸  
+-- - 惯性  
+-- - 编码  
+-- 分析&编码：  
+-- - /Shop/ShopGoods/note.txt  
+
+## 2. CartControl组件  
+- 问题：更新状态数据，对应的界面不变化  
+-- 原因：一般方法给一个已有绑定的对象中添加一个新的属性，这个属性没有数据绑定  
+-- 解决：  
+-- - Vue.set(obj, 'xxx', value)才有数据绑定  
+-- - this.$set(obj, 'xxx', value)才有数据绑定  
+## 3. ShopCart组件   
+- 使用vuex管理购物项数据：cartFoods  
+- 解决几个功能性bug  
+
+## 4. Food组件  
+- 父子组件：  
+-- 子组件调用父组件的方法：通过props将方法传递给子组件  
+-- 父组件调用子组件的方法：通过ref找到子组件标签对象
+
 
