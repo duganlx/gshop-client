@@ -7,7 +7,7 @@
 
 
 ## 效果展示
-[./static/photo/result.git](效果展示)
+![image](https://github.com/duganlx/gshop/blob/master/static/photo/result.gif)
 
 ## 环境搭建
 - 下载node.js
