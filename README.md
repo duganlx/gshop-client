@@ -148,3 +148,6 @@ gshop
    |-- package-lock.json
    |-- README.md: 应用描述说明的readme文件
 ````
+
+## 项目说明
+- 图标引用于[阿里巴巴矢量图标库](https://www.iconfont.cn/plus/user/detail?uid=41718)
