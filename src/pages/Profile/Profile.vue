@@ -41,24 +41,24 @@
       <!-- 我的订单 -->
       <a href='javascript:' class="my_order">
             <span>
-              <i class="iconfont icon-wodedingdan"></i>
+              <i class="iconfont icon-order-s icon-dingdan"></i>
             </span>
         <div class="my_order_div">
           <span>我的订单</span>
           <span class="my_order_icon">
-                <i class="iconfont icon-xiangyoujiantou"></i>
+                <i class="iconfont icon-xiangyoujiantou icon-jiantou1"></i>
               </span>
         </div>
       </a>
       <!-- 积分商城 -->
       <a href='javascript:' class="my_order">
             <span>
-              <i class="iconfont icon-jifen"></i>
+              <i class="iconfont icon-jifen icon-jifenshangcheng"></i>
             </span>
         <div class="my_order_div">
           <span>积分商城</span>
           <span class="my_order_icon">
-                <i class="iconfont icon-xiangyoujiantou"></i>
+                <i class="iconfont icon-xiangyoujiantou icon-jiantou1"></i>
               </span>
         </div>
       </a>
@@ -70,7 +70,7 @@
         <div class="my_order_div">
           <span>硅谷外卖会员卡</span>
           <span class="my_order_icon">
-                <i class="iconfont icon-xiangyoujiantou"></i>
+                <i class="iconfont icon-xiangyoujiantou icon-jiantou1"></i>
               </span>
         </div>
       </a>
@@ -79,12 +79,12 @@
       <!-- 服务中心 -->
       <a href="javascript:" class="my_order">
             <span>
-              <i class="iconfont icon-fuwu"></i>
+              <i class="iconfont icon-fuwu icon-fuwuzhongxin"></i>
             </span>
         <div class="my_order_div">
           <span>服务中心</span>
           <span class="my_order_icon">
-                <i class="iconfont icon-xiangyoujiantou"></i>
+                <i class="iconfont icon-xiangyoujiantou icon-jiantou1"></i>
               </span>
         </div>
       </a>

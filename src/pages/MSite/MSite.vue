@@ -3,7 +3,8 @@
     <!-- 首页头部 -->
     <HeaderTop :title="address.name">
       <router-link class="header_search" slot="left" to="/search">
-        <i class="iconfont icon-sousuo"></i>
+        <!-- icon-sousou类的样式没有生效 -->
+        <i class="iconfont icon-sousuo" style="font-size:25px;color:#fff"></i>
       </router-link>
       <router-link class="header_login" slot="right" :to="userInfo._id ? '/userinfo' : '/login'">
         <span class="header_login_text" v-if="!userInfo._id">

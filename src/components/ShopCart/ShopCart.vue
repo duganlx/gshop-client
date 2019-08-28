@@ -68,6 +68,7 @@
 
         return totalPrice >= minPrice ? 'enough' : 'not-enough'
       },
+
       payText () {
         const {totalPrice} = this
         const {minPrice} = this.info
@@ -120,6 +121,7 @@
         })
       }
     },
+
     components: {
       CartControl
     }
