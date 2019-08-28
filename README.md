@@ -1,10 +1,12 @@
-# 硅谷外卖
+# 硅谷外卖（前端）
 
 ## 项目介绍
 > Vue实战项目，此项目为外卖Web App(SPA)，包括商家、商品、购物车、用户等多个子
 > 模块，使用Vue全家桶+ES6+Webpack等前端最新最热的技术，采用模块化、组件化、工程
 > 化的模式开发，同时采用前后端分离开发
 
+## 后端项目
+**![硅谷外卖（后端）](https://github.com/duganlx/gshop-server)**
 
 ## 效果展示
 ![image](https://github.com/duganlx/gshop/blob/master/static/photo/result.gif)
